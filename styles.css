@@ -71,19 +71,18 @@ img, svg{ max-width: 100%; height: auto; }
 }
 
 .header-inner{
-  display: flex;
-  justify-content: space-between; /* logo hard left, nav pushed right */
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
   min-height: 80px;
-  padding-inline: clamp(12px, 2vw, 24px); /* less padding keeps logo left */
+  gap: 20px;
 }
 
-/* Logo */
+/* Logo left */
 .brand{
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  margin-right: auto;
+  gap: 12px;
 }
 .brand-dot{
   width: 12px; height: 12px; border-radius: 50%;
@@ -92,23 +91,24 @@ img, svg{ max-width: 100%; height: auto; }
 }
 .brand-text{
   font-weight: 800;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
   white-space: nowrap;
 }
-/* Nav */
+
+/* Nav across middle/right */
 .nav-list{
   display: flex;
-  justify-content: space-evenly;
-  gap: clamp(40px, 6vw, 120px); /* much wider spacing */
+  align-items: center;
+  gap: clamp(16px, 3vw, 42px);
   list-style: none;
   margin: 0; padding: 0;
 }
 .nav-link{
   position: relative;
-  font-size: 1.05em;
-  font-weight: 650;
+  display: inline-block;
   padding: 10px 4px;
   opacity: 0.96;
+  font-weight: 650;
 }
 .nav-link::after{
   content: "";
