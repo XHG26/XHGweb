@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Queen’s School of Computing — Projects</title>
+  <meta name="description" content="Projects page." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Queen’s School of Computing Home">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">Queen’s School of Computing</span>
+      </a>
+      <nav class="primary-nav" aria-label="Primary">
+        <ul class="nav-list" role="list">
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="about.html">About</a></li>
+          <li><a class="nav-link active" href="projects.html">Projects</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container narrow">
+        <h1 class="page-title">Projects<span class="dot">.</span></h1>
+
+        <ul class="project-list" role="list">
+          <li class="project-item">
+            <h2 class="project-title">Project One<span class="dot">.</span></h2>
+            <p class="muted">Short description of the project and role<span class="dot">.</span></p>
+          </li>
+          <li class="project-item">
+            <h2 class="project-title">Project Two<span class="dot">.</span></h2>
+            <p class="muted">Short description with tech highlights<span class="dot">.</span></p>
+          </li>
+          <li class="project-item">
+            <h2 class="project-title">Project Three<span class="dot">.</span></h2>
+            <p class="muted">Short description and outcomes<span class="dot">.</span></p>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Queen’s School of Computing<span class="dot">.</span></p>
+      <p class="support-line">Produced in support by ChatGPT-5<span class="dot">.</span></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
