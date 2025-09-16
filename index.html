@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Queen’s School of Computing — Portfolio</title>
+  <title>Queen’s School of Computing — Home</title>
   <meta name="description" content="Minimal dark portfolio with purple accent." />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -13,95 +13,42 @@
   <!-- Top bar -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <!-- Logo (crown + text, left) -->
-      <a href="#home" class="brand" aria-label="Queen’s School of Computing Home">
-        <span class="brand-mark" aria-hidden="true">
-          <!-- Minimal crown icon (inline SVG) -->
-          <svg class="crown" width="28" height="20" viewBox="0 0 28 20" aria-hidden="true">
-            <path d="M2 16.5h24v2H2v-2Zm1.2-11.9 5.7 4.4 4.2-7.1 4.2 7.1 5.7-4.4 2.6 9.8H.6l2.6-9.8Z"/>
-          </svg>
-        </span>
+      <!-- Logo (text-only, left) -->
+      <a href="index.html" class="brand" aria-label="Queen’s School of Computing Home">
+        <span class="brand-dot" aria-hidden="true"></span>
         <span class="brand-text">Queen’s School of Computing</span>
       </a>
 
       <!-- Nav (center/right) -->
       <nav class="primary-nav" aria-label="Primary">
         <ul class="nav-list" role="list">
-          <li><a class="nav-link" href="#home">Home</a></li>
-          <li><a class="nav-link" href="#about">About</a></li>
-          <li><a class="nav-link" href="#projects">Projects</a></li>
+          <li><a class="nav-link active" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="about.html">About</a></li>
+          <li><a class="nav-link" href="projects.html">Projects</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <!-- HOME -->
-    <section id="home" class="section hero" aria-labelledby="home-title">
+    <!-- HERO -->
+    <section class="section hero">
       <div class="container hero-container">
-        <div class="hero-divider" aria-hidden="true"></div>
-        <h1 id="home-title" class="hero-line">
-          Wellcome, I’m Howard G
-        </h1>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section" aria-labelledby="about-title">
-      <div class="container narrow">
-        <h2 id="about-title" class="section-title">About</h2>
-        <p class="muted">
-          Brief introduction goes here. Keep it concise and focused. Add your research
-          interests, current projects, or a one-line mission statement.
-        </p>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="section" aria-labelledby="projects-title">
-      <div class="container narrow">
-        <h2 id="projects-title" class="section-title">Projects</h2>
-        <ul class="project-list" role="list">
-          <li class="project-item">Project One — short description.</li>
-          <li class="project-item">Project Two — short description.</li>
-          <li class="project-item">Project Three — short description.</li>
-        </ul>
+        <h1 class="hero-line">Wellcome, I’m Howard G</h1>
+        <div class="center-line" aria-hidden="true"></div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="year"></span> Queen’s School of Computing</p>
+      <p>© <span id="year"></span> Queen’s School of Computing<span class="dot">.</span></p>
+      <p class="support-line">Produced in support by ChatGPT-5<span class="dot">.</span></p>
     </div>
   </footer>
 
-  <!-- Small helper script:
-       1) Set year
-       2) Tint punctuation characters to purple by wrapping them in spans.
-  -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Punctuation tinting: wrap punctuation in <span class="punct">
-    (function tintPunctuation(){
-      const selector = 'h1, h2, h3, p, li, a, figcaption';
-      const punctRe = /([.,;:!?—–\-()'"“”‘’])/g; // common punctuation
-      document.querySelectorAll(selector).forEach(el => {
-        // skip if element contains child elements (avoid breaking links/aria)
-        // but still allow simple inline HTML; do a cautious replace
-        el.childNodes.forEach(node => {
-          if (node.nodeType === Node.TEXT_NODE) {
-            const html = node.textContent.replace(punctRe, '<span class="punct">$1</span>');
-            if (html !== node.textContent) {
-              const frag = document.createElement('span');
-              frag.innerHTML = html;
-              node.replaceWith(...frag.childNodes);
-            }
-          }
-        });
-      });
-    })();
   </script>
 </body>
 </html>
