@@ -71,18 +71,19 @@ img, svg{ max-width: 100%; height: auto; }
 }
 
 .header-inner{
-  display: grid;
-  grid-template-columns: 1fr auto;
+  display: flex;
+  justify-content: space-between; /* logo hard left, nav pushed right */
   align-items: center;
   min-height: 80px;
-  gap: 20px;
+  padding-inline: clamp(12px, 2vw, 24px); /* less padding keeps logo left */
 }
 
-/* Logo left */
+/* Logo */
 .brand{
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  margin-right: auto;
 }
 .brand-dot{
   width: 12px; height: 12px; border-radius: 50%;
@@ -91,24 +92,23 @@ img, svg{ max-width: 100%; height: auto; }
 }
 .brand-text{
   font-weight: 800;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.3px;
   white-space: nowrap;
 }
-
-/* Nav across middle/right */
+/* Nav */
 .nav-list{
   display: flex;
-  align-items: center;
-  gap: clamp(16px, 3vw, 42px);
+  justify-content: space-evenly;
+  gap: clamp(40px, 6vw, 120px); /* much wider spacing */
   list-style: none;
   margin: 0; padding: 0;
 }
 .nav-link{
   position: relative;
-  display: inline-block;
+  font-size: 1.05em;
+  font-weight: 650;
   padding: 10px 4px;
   opacity: 0.96;
-  font-weight: 650;
 }
 .nav-link::after{
   content: "";
@@ -176,15 +176,18 @@ img, svg{ max-width: 100%; height: auto; }
   background: var(--surface);
 }
 .footer-inner{
-  display: grid;
-  gap: 6px;
-  justify-items: center;
-  padding-block: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;               /* tight spacing */
+  padding-block: 14px;    /* reduced height */
+  font-size: 0.9rem;
   color: var(--muted);
 }
 .support-line{
+  font-weight: 500;
   opacity: 0.95;
-  font-weight: 600;
 }
 
 /* Purple period utility */
