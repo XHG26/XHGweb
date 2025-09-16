@@ -8,3 +8,5 @@ The Home Page - located in index.html, to input, simply write in the <!-- HERO -
 The About Page - located in about.html, to input, write in the section under line 33.
 
 The Projects Page - located in the projects.html, to imput, please also write in the section under line 33.
+
+Pictures - to change or add, use another picture with the same name "picture" and insert using <img>, then adjust the values under [line 196, styles.css]
