@@ -193,6 +193,12 @@ img, svg{ max-width: 100%; height: auto; }
 /* Purple period utility */
 .dot{ color: var(--purple); }
 
+.about-img {
+  max-width: 200px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
 /* Skip link */
 .skip-link{
   position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
